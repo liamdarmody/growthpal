@@ -35,4 +35,12 @@
   <%= render 'layouts/footer' %>
 
 </body>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('.editor').notebook({
+          autoFocus: true,
+          placeholder: 'Type something awesome...'
+      });
+  });
+</script>
 </html>
