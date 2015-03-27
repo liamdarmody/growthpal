@@ -55,8 +55,14 @@ Copy Tweaks
 Deployment
 -------------
 
-* Setup repo on Heroku: <kbd>heroku create appname</kbd>
+* Setup Heroku Repo: <kbd>heroku create appname</kbd>
 
-* Install Figaro locally: <kbd>gem install "figaro"</kbd>
+* Push to Heroku Repo: <kbd>git push heroku master</kbd>
 
-* Setup env on Heroku: <kbd>figaro heroku:set -e production</kbd>
+* Migrate Database: <kbd>heroku run rake db:migrate</kbd>
+
+* Seed Database: <kbd>heroku run rake db:seed</kbd>
+
+* Install Figaro: <kbd>gem install "figaro"</kbd>
+
+* Setup Env on Heroku: <kbd>figaro heroku:set -e production</kbd>
