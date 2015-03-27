@@ -33,7 +33,7 @@ Stack
 Initial Setup
 -------------
 
-* Clone the repo
+* Clone the repo: <kbd>git clone https://github.com/liamdarmody/growthpal.git</kbd>
 
 * Update config files:
 
@@ -43,14 +43,16 @@ Initial Setup
 
 * Run <kbd>bundle</kbd>
 
-* Drop, Migrate and Seed the database: <kbd>rbricks -r</kbd>
+* Drop, Migrate and Seed the Database: <kbd>rbricks -r</kbd>
 
-Copy Tweaks
+Tweak Copy
 -------------
 
 * Login as admin
 
 * Update copy on pages using the Inline Editor
+
+* (To be completed)
 
 Deployment
 -------------
