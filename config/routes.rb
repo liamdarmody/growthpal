@@ -2,7 +2,7 @@ Growthpal::Application.routes.draw do
   
   # root "pages#home"
   # get "home", to: "pages#home", as: "home"
-  # get "inside", to: "pages#inside", as: "inside"
+  get "inside", to: "pages#inside", as: "inside"
   get "/contact", to: "pages#contact", as: "contact"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
   
@@ -26,7 +26,7 @@ Growthpal::Application.routes.draw do
   # Routes for menu - I don't understand this
   root "pages#home"
   get "home", to: "pages#home", as: "home"
-  get "inside", to: "pages#inside", as: "inside"
+  # get "inside", to: "pages#inside", as: "inside"
   # get "/contact", to: "pages#contact", as: "contact"
   # post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
 
