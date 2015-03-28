@@ -21,7 +21,7 @@ Features
 
 * Blog
 
-Stack
+System Requirements
 -------------
 
 * Ruby 2.1.2
