@@ -60,3 +60,6 @@ end
 
 # ComfortableMexicanSofa is a powerful Rails 4 CMS Engine
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
+
+# Rails gem to enable serving of static assets
+gem 'rails_serve_static_assets'
