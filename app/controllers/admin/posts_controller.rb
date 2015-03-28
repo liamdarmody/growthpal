@@ -69,5 +69,4 @@ class Admin::PostsController < Admin::BaseController
     )
   end
 
-
 end
