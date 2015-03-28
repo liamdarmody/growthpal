@@ -4,9 +4,11 @@ class PagesController < ApplicationController
   ]
 
   def home
+    render :cms_page => '/'
   end
 
   def inside
+    render :cms_page => '/inside'
   end
   
   def posts
