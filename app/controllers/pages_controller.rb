@@ -3,13 +3,33 @@ class PagesController < ApplicationController
     :inside
   ]
 
+  before_filter :require_admin!, only: [
+    :edit
+  ]
+
+  def page
+    @page = Pages.find_by(:name => params[:page])
+    render :page
+  end
+
+  def edit
+    @page = Pages.find_by(:name => params[:page])
+    render :edit
+  end
+
+  def update
+    # To be completed
+  end
+
+  # To be removed once CMS functionality has been added
   def home
   end
 
+  # To be removed once CMS functionality has been added
   def inside
   end
   
-def posts
+  def posts
     @posts = Post.published.page(params[:page]).per(10)
   end
   
@@ -18,7 +38,6 @@ def posts
   rescue
     redirect_to root_path
   end
-
   
   def email
     @name = params[:name]
