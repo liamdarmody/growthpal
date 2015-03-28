@@ -39,7 +39,6 @@ group :development, :test do
   gem 'annotate'
 end
 
-
 # PostgreSQL
 gem 'pg'
 
@@ -58,3 +57,6 @@ end
 group :production do
   gem 'unicorn'
 end
+
+# ComfortableMexicanSofa is a powerful Rails 4 CMS Engine
+gem 'comfortable_mexican_sofa', '~> 1.12.0'
