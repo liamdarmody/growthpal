@@ -21,10 +21,10 @@ gem 'kaminari', '0.16.3'
 gem 'friendly_id', '5.1.0'
 
 # Font-awesome: https://github.com/FortAwesome/font-awesome-sass
-gem 'font-awesome-sass', '4.3.1'
+# gem 'font-awesome-sass', '4.3.1'
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
-gem 'bootstrap-sass', '3.3.3'
+# gem 'bootstrap-sass', '3.3.3'
 
 group :development, :test do
   gem 'byebug', '3.5.1'
@@ -62,4 +62,4 @@ end
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
 
 # Rails gem to enable serving of static assets
-gem 'rails_serve_static_assets'
+# gem 'rails_serve_static_assets'

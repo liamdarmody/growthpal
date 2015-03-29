@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title><%= @title || "GrowthPal" %></title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <!-- GOOGLE FONTS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+</head>
+<body class="enable-animations enable-preloader">
+  <div id="document" class="document">
+    <header id="header" class="header-section section section-dark navbar navbar-fixed-top">
+      <%= render 'layouts/navigation' %>
+    </header>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <%= render 'layouts/messages' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <%= yield %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%= render 'layouts/footer' %>
+
+</body>
+</html>
