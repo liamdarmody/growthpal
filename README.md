@@ -58,7 +58,8 @@ Configuration
 
     * Update the file with the following:
 
-    ``` ENVIRONMENT VARIABLES
+    ```
+    # ENVIRONMENT VARIABLES
     DOMAIN: "appname.herokuapp.com"
     SENDER_EMAIL: "hello@appname.com.au"
     MAILER_DOMAIN: "appname.herokuapp.com"
