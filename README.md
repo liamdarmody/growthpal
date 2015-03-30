@@ -55,12 +55,18 @@ Configuration
 
     * Sign up and login to [Mandrill](https://mandrill.com/signup/)
 
-    * Get an API Key
+      * Get an API Key
 
-    * Update the file with the following:
+    * Sign up and login to [Intercom](https://www.intercom.io/)
+
+      * Get an App ID & API Secret
+
+    * Create file with the following variables:
 
     ```
     # ENVIRONMENT VARIABLES
+    
+    # For Mandrill Mailer
     DOMAIN: "appname.herokuapp.com"
     SENDER_EMAIL: "hello@appname.com.au"
     MAILER_DOMAIN: "appname.herokuapp.com"
@@ -68,6 +74,10 @@ Configuration
     SMTP_PORT: "25"
     SMTP_USER: "mandrill-login-email@example.com"
     SMTP_PWD: "mandrill-api-key"
+
+    # For Intercom
+    INTERCOM_APP_ID: "intercom-app-id"
+    INTERCOM_API_SECRET: "intercom-api-secret"
     ```
 
   * app/views/layouts/_vwo_code.html.erb
@@ -77,6 +87,14 @@ Configuration
     * Setup a campaign
 
     * Update the file with your own VWO smart code
+
+  * app/views/layouts/google_analytics_script.html.erb
+
+    * Sign up and login to [Google Analytics](http://www.google.com.au/analytics/)
+
+    * Add your new site
+
+    * Update the file with your own Google Analytics Script
 
 Deployment
 -------------
