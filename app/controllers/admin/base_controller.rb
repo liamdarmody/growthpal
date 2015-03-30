@@ -1,4 +1,4 @@
-class Admin::BaseController < ApplicationController
+class Admin::BaseController < Comfy::Admin::Cms::BaseController
   before_filter :require_admin!
 
   def index

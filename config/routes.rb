@@ -20,7 +20,7 @@ Growthpal::Application.routes.draw do
   end
 
   # Define route for cms_admin
-  comfy_route :cms_admin, :path => '/cms'
+  comfy_route :cms_admin, :path => '/admin'
 
   # Make sure this routeset is defined last
   comfy_route :cms, :path => '/', :sitemap => false
