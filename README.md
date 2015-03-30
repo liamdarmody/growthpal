@@ -33,7 +33,7 @@ System Requirements
 Initial Setup
 -------------
 
-* Clone the repo: <kbd>git clone https://github.com/liamdarmody/growthpal.git</kbd>
+* Clone the repo: `git clone https://github.com/liamdarmody/growthpal.git`
 
 * Update config files:
 
@@ -41,9 +41,9 @@ Initial Setup
 
   * config/database.yml
 
-* Run <kbd>bundle</kbd>
+* Run `bundle`
 
-* Drop, Migrate and Seed the Database: <kbd>rbricks -r</kbd>
+* Drop, Migrate and Seed the Database: `rbricks -r`
 
 Configuration
 -------------
@@ -80,38 +80,38 @@ Configuration
 Deployment
 -------------
 
-* Setup Heroku Repo: <kbd>heroku create appname</kbd>
+* Setup Heroku Repo: `heroku create appname`
 
-* Push to Heroku Repo: <kbd>git push heroku master</kbd>
+* Push to Heroku Repo: `git push heroku master`
 
-* Migrate Database: <kbd>heroku run rake db:migrate</kbd>
+* Migrate Database: `heroku run rake db:migrate`
 
-* Seed Database: <kbd>heroku run rake db:seed</kbd>
+* Seed Database: `heroku run rake db:seed`
 
-* Install Figaro: <kbd>gem install "figaro"</kbd>
+* Install Figaro: `gem install "figaro"`
 
-* Setup Env on Heroku: <kbd>figaro heroku:set -e production</kbd>
+* Setup Env on Heroku: `figaro heroku:set -e production`
 
 Add Seed Pages to CMS
 -------------
 
 * Create Site in Database:
 
-  * Local: <kbd>rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'localhost:3000')</kbd>
+  * Local: `rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'localhost:3000')`
 
-  * Heroku: <kbd>heroku run rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'growthpal.herokuapp.com')</kbd>
+  * Heroku: `heroku run rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'growthpal.herokuapp.com')`
 
 * Load CMS Fixtures into Database:
 
-  * Local: <kbd>rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site</kbd>
+  * Local: `rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site`
 
-  * Heroku: <kbd>heroku run rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site</kbd>
+  * Heroku: `heroku run rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site`
 
 * Export Pages from Database into Files (optional):
 
-  * Local: <kbd>rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed</kbd>
+  * Local: `rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed`
 
-  * Heroku: <kbd>heroku run rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed</kbd>
+  * Heroku: `heroku run rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed`
 
 > **Tip:** Check out the [Working with CMS fixtures](https://github.com/comfy/comfortable-mexican-sofa/wiki/Working-with-CMS-fixtures) to learn about other ways to speed up initial content population. 
 
@@ -120,14 +120,14 @@ Update Page Content
 
 * Login as Admin: 
 
-  * Local: <kbd>localhost:3000/users/sign_in</kbd>
+  * Local: `localhost:3000/users/sign_in`
 
-  * Heroku: <kbd>yourappname.herokuapp.com/users/sign_in</kbd>
+  * Heroku: `yourappname.herokuapp.com/users/sign_in`
 
 * Visit the CMS:
 
-  * Local: <kbd>localhost:3000/cms</kbd>
+  * Local: `localhost:3000/cms`
 
-  * Heroku: <kbd>yourappname.herokuapp.com/cms</kbd>
+  * Heroku: `yourappname.herokuapp.com/cms`
 
 * Go to "Pages" tab and update copy in the editor
