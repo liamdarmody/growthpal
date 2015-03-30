@@ -1,6 +1,6 @@
 ---
-label: Landing
-layout: application
+label: Launch
+layout: launch
 parent: index
 target_page: 
 categories: []

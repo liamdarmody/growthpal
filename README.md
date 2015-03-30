@@ -71,9 +71,9 @@ Add Seed Pages to CMS
 
 * Load CMS Fixtures into Database:
 
-  * Local: <kbd>rake comfortable_mexican_sofa:fixtures:import FROM=main-site TO=main-site-seed</kbd>
+  * Local: <kbd>rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site</kbd>
 
-  * Heroku: <kbd>heroku run rake comfortable_mexican_sofa:fixtures:import FROM=main-site TO=main-site-seed</kbd>
+  * Heroku: <kbd>heroku run rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site</kbd>
 
 * Export Pages from Database into Files (optional):
 
