@@ -58,8 +58,8 @@ group :production do
   gem 'unicorn'
 end
 
-# ComfortableMexicanSofa is a powerful Rails 4 CMS Engine
+# ComfortableMexicanSofa: https://github.com/comfy/comfortable-mexican-sofa
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
 
-# Rails gem to enable serving of static assets
-# gem 'rails_serve_static_assets'
+# Intercom: https://www.intercom.io/
+gem 'intercom-rails'
