@@ -9,41 +9,15 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="about-us">
-  <header class="navbar navbar-inverse normal" role="banner">
-      <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">GrowthPal</a>
-        </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav">
-              <%= render 'layouts/navigation_links' %>
-            </ul>
-        </nav>
-      </div>
-  </header>
-  
+
+<body id="<%= params[:controller] %>-<%= params[:action] %>">
+
+  <%= render 'layouts/navigation_menu_top' %>
+
   <%= yield %>
 
-  <div id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3 copyright">
-          &copy; GrowthPal 2015
-        </div>
-        <div class="col-sm-6 menu">
-          <ul>
-            <%= render 'layouts/footer_links' %>  
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <%= render 'layouts/footer' %>
+  
 </body>
+
 </html>

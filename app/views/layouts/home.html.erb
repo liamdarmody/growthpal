@@ -16,23 +16,10 @@
     <nav class="nav-menu">
       <h3>Menu</h3>
       <%= render 'layouts/navigation_items' %>
-      <div class="social">
-        <a href="#">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-google-plus"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-youtube-play"></i>
-        </a>
-      </div>
     </nav>
 
     <div class="st-pusher">
+
       <div class="st-content">
 
         <header class="navbar navbar-inverse hero" role="banner">
@@ -50,34 +37,13 @@
 
         <%= yield %>
 
-        <div id="footer">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-3 copyright">
-                &copy; GrowthPal 2015
-              </div>
-              <div class="col-sm-6 menu">
-                <ul>
-                  <%= render 'layouts/footer_links' %>  
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render 'layouts/footer' %>
 
       </div><!-- end .st-content -->
+      
     </div><!-- end .st-pusher -->
-  </div><!-- end .st-container -->
 
-  <div class="modal fade" id="demo">
-      <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-              <iframe src='http://player.vimeo.com/video/22439234' width='650' height='370' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-     </div>
-  </div>
+  </div><!-- end .st-container -->
 
   <script type="text/javascript">
     $(function () {
