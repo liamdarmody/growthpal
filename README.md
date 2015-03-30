@@ -58,8 +58,7 @@ Configuration
 
     * Update the file with the following:
 
-    <kbd>
-    # ENVIRONMENT VARIABLES
+    ``` ENVIRONMENT VARIABLES
     DOMAIN: "appname.herokuapp.com"
     SENDER_EMAIL: "hello@appname.com.au"
     MAILER_DOMAIN: "appname.herokuapp.com"
@@ -67,7 +66,7 @@ Configuration
     SMTP_PORT: "25"
     SMTP_USER: "mandrill-login-email@example.com"
     SMTP_PWD: "mandrill-api-key"
-    </kbd>
+    ```
 
   * app/views/layouts/_vwo_code.html.erb
 
