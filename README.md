@@ -29,6 +29,7 @@ System Requirements
 * Rails 4.2.0
 
 >Using RailsBricks (Version: 3.1.6)
+>Using ComfortableMexicanSofa
 
 Initial Setup
 -------------

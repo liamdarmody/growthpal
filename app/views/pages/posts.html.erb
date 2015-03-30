@@ -1,18 +1,60 @@
-<% title("Posts") %>
-<h1>Posts</h1>
+<div id="posts">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        
+        <% @posts.each do |post| %>
 
-<% @posts.each do |post| %>
+        <div class="post">
+          <div class="title">
+            <%= link_to "#{post.title}", post_path(post.slug) %>
+          </div>
+          <div class="author">
+            <%#= @post.updated_at.strftime("%Y, %B %-d") %>
+            <%= time_ago_in_words(post.updated_at) %> ago
+          </div>
+          <%= post.content_html.html_safe %>
+          <%= link_to "Continue reading this post", post_path(post.slug), :class => "continue-reading" %>
+          <!-- <a href="blogpost.html" class="continue-reading">Continue reading this post</a> -->
+        </div>
 
-<div class="title-box">
-  <p>
-    <%= link_to "#{post.title}", post_path(post.slug) %> <br/>
-    <span><small><em><%= time_ago_in_words(post.updated_at) %> ago</em></small></span>
-  </p>
+        <% end %>
 
-</div>
-
-<% end %>
-
-<div class="pagination-control text-center">
-  <%= paginate @posts %>
+        <div class="pages">
+          <ul class="pagination">
+              <%= paginate @posts %>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 sidebar">
+        <div class="search">
+          <form>
+            <span class="icomoon-search"></span>
+            <input type="text" name="q" placeholder="Search on blog..." />
+          </form>
+        </div>
+        <div class="updates">
+          <strong>
+            Free blog updates
+            <i class="fa fa-rss"></i>
+          </strong>
+          <p>
+            Never miss an update. 
+            Sign up  to receieve an email whenever we post something in the blog.
+          </p>
+        </div>
+        <div class="follow-tw">
+          <img src="images/twitterfollow.png" alt="follow-tw" />
+        </div>
+        <div class="best-hits">
+          <strong>Check out our best hits:</strong>
+          <a href="#">How to start a business</a>
+          <a href="#">How to sell online</a>
+          <a href="#">Climate change when needed</a>
+          <a href="#">Web development upstart</a>
+          <a href="#">Learn Rails in 30 days</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
