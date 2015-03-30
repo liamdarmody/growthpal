@@ -11,6 +11,9 @@
         <div class="content">
           <%= @post.content_html.html_safe %>
         </div>
+        <div class="comments">
+          <%= render 'layouts/disqus_script' %>
+        </div>
       </div>
     </div>
   </div>

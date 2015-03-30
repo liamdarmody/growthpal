@@ -96,6 +96,14 @@ Configuration
 
     * Update the file with your own Google Analytics Script
 
+  * app/views/layouts/disqus_script.html.erb
+
+    * Sign up and login to [Disqus](https://disqus.com/)
+
+    * Add your new site and choose "Universal Code"
+
+    * Update the file with your own Disqus code
+
 Deployment
 -------------
 
