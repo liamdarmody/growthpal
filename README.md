@@ -45,6 +45,38 @@ Initial Setup
 
 * Drop, Migrate and Seed the Database: <kbd>rbricks -r</kbd>
 
+Configuration
+-------------
+
+* The following files will need to be comfigured with your own variables:
+
+  * config/application.yml
+
+    * Sign up and login to [Mandrill](https://mandrill.com/signup/)
+
+    * Get an API Key
+
+    * Update the file with the following:
+
+    <kbd>
+    # ENVIRONMENT VARIABLES
+    DOMAIN: "appname.herokuapp.com"
+    SENDER_EMAIL: "hello@appname.com.au"
+    MAILER_DOMAIN: "appname.herokuapp.com"
+    SMTP_SERVER: "smtp.mandrillapp.com"
+    SMTP_PORT: "25"
+    SMTP_USER: "mandrill-login-email@example.com"
+    SMTP_PWD: "mandrill-api-key"
+    </kbd>
+
+  * app/views/layouts/_vwo_code.html.erb
+
+    * Sign up and login to [Visual Website Optimiser](https://vwo.com)
+
+    * Setup a campaign
+
+    * Update the file with your own VWO smart code
+
 Deployment
 -------------
 
