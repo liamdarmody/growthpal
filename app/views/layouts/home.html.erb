@@ -6,7 +6,6 @@
   <%#= favicon_link_tag 'favicon.ico' %>
   <%#= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -54,8 +53,7 @@
             <div class="container">
               <h1 class="hero-text animated fadeIn">The best interfaces for your web and mobile apps.</h1>
               <div class="cta animated fadeIn">
-                <a href="signup.html" class="button">Sign up free</a>
-                <a href="#" data-toggle="modal" data-target="#demo" class="demo">Watch a demo</a>
+                <a href="/users/sign_up" class="button">Sign up free</a>
               </div>
               <div class="screenshot animated fadeInUp">
                 <img src="images/ss2.png" class="img-responsive" alt="screenshot" />
@@ -404,14 +402,6 @@
                 <ul>
                   <%= render 'layouts/footer_links' %>  
                 </ul>
-              </div>
-              <div class="col-sm-3 social">
-                <a href="#">
-                  <img src="images/social/social-tw.png" alt="twitter" />
-                </a>
-                <a href="#">
-                  <img src="images/social/social-dbl.png" alt="dribbble" />
-                </a>          
               </div>
             </div>
           </div>
