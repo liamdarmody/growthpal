@@ -61,6 +61,10 @@ Configuration
 
       * Get an App ID & API Secret
 
+    * Sign up and login to [Stripe](https://stripe.com/au)
+
+      * Get a Publishable Key & Secret Key
+
     * Create file with the following variables:
 
     ```
@@ -78,6 +82,10 @@ Configuration
     # For Intercom
     INTERCOM_APP_ID: "intercom-app-id"
     INTERCOM_API_SECRET: "intercom-api-secret"
+
+    # For Stripe [Test]
+    PUBLISHABLE_KEY: "stripe-publishable-key"
+    SECRET_KEY: "stripe-secret-key"
     ```
 
   * app/views/layouts/_vwo_code.html.erb
