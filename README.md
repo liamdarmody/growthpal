@@ -65,6 +65,8 @@ Configuration
 
       * Get a Publishable Key & Secret Key
 
+      * Integrate your Stripe account with Intercom
+
     * Create file with the following variables:
 
     ```

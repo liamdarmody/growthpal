@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row header">
       <div class="col-md-12">
-        <h3>Different plans for everyone</h3>
+        <h3>What website package would you like?</h3>
         <p>Choose the pricing that fits your business needs</p>
       </div>
     </div>
@@ -10,10 +10,10 @@
     <div class="row charts">
       <div class="col-md-4">
         <div class="chart first">
-          <div class="plan-name">Freelance</div>
+          <div class="plan-name">Monthly Retainer</div>
           <div class="quantity">
             <span class="dollar">$</span>
-            <span class="price">29</span>
+            <span class="price">1000</span>
             <span class="period">/month</span>
           </div>
           <div class="specs">
@@ -38,19 +38,30 @@
               Transaction fee
             </div>
           </div>
-          <a class="btn-signup button-clear" href="signup.html">
-            <span>Start free trial</span>
-          </a>
+          <% if Subscription.where(:email => current_user.email).count > 0 %>
+            <strong><em>Thanks for subscribing</em></strong>
+          <% else %>
+            <%= form_tag subscriptions_path do %>
+              <%= hidden_field_tag :plan_id, "growthpal-retainer" %>
+              <script
+                src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                data-key=<%= Rails.configuration.stripe[:publishable_key] %>
+                data-name="Monthly Retainer"
+                data-description="Up to 10 hours / month"
+                data-currency="aud"
+                data-image="<%= asset_path 'stripe-icon.png' %>"
+                data-email="<%= current_user.email %>">
+              </script>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <div class="col-md-4">
         <div class="chart featured">
-          <img src="images/ribbon.png" class="popular" alt="ribbon" />
-          <div class="plan-name">Profesional</div>
+          <div class="plan-name">Website Package</div>
           <div class="quantity">
             <span class="dollar">$</span>
-            <span class="price">79</span>
-            <span class="period">/month</span>
+            <span class="price"><%= @website_package.to_i/100 %></span>
           </div>            
           <div class="specs">
             <div class="spec">
@@ -74,18 +85,26 @@
               Transaction fee
             </div>
           </div>
-          <a class="btn-signup button-clear" href="signup.html">
-            <span>Start free trial</span>
-          </a>
+          <%= form_tag charges_path do %>
+            <%= hidden_field_tag :product_id, "website-package" %>
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="GrowthPal"
+              data-description="Website Package"
+              data-amount="<%= @website_package %>"
+              data-image="<%= asset_path 'stripe-icon.png' %>"
+              data-email="<%= current_user.email %>">
+            </script>
+          <% end %>
         </div>
       </div>
       <div class="col-md-4">
         <div class="chart last">
-          <div class="plan-name">Premium</div>
+          <div class="plan-name">Stripe Setup</div>
           <div class="quantity">
             <span class="dollar">$</span>
-            <span class="price">119</span>
-            <span class="period">/month</span>
+            <span class="price"><%= @stripe_setup.to_i/100 %></span>
           </div>
           <div class="specs">
             <div class="spec">
@@ -109,16 +128,25 @@
               Transaction fee
             </div>
           </div>
-          <a class="btn-signup button-clear" href="signup.html">
-            <span>Start free trial</span>
-          </a>
+          <%= form_tag charges_path do %>
+            <%= hidden_field_tag :product_id, "stripe-setup" %>
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="GrowthPal"
+              data-description="Stripe Setup"
+              data-amount="<%= @stripe_setup %>"
+              data-image="<%= asset_path 'stripe-icon.png' %>"
+              data-email="<%= current_user.email %>">
+            </script>
+          <% end %>
         </div>
       </div>        
     </div>
     <div class="row message">
       <p>
         All of our plans come with a 30 day trial with no credit card required, we also offer a 
-        <a href="signup.html">free plan</a>.
+        <a href="/contact">free consultation</a>.
       </p>
     </div>
     <div class="row faq">
@@ -165,64 +193,11 @@
         <div class="wrapper clearfix">
           <h4>
             <span class="brankic-phone2"></span>
-            Unsure which plan is best for you? You can call our sales team any day at 
-            <strong>1-800-123-4567</strong>
+            Unsure which plan is best for you? We're here to help.
+            <a href="/contact">Get in touch!</a>
           </h4>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-<%= form_tag charges_path do %>
-  <%= hidden_field_tag :plan_id, "growthpal-retainer" %>
-  <article>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="GrowthPal"
-          data-description="Inial Setup"
-          data-amount="<%= @amount %>"
-          data-image="<%= asset_path 'stripe-icon.png' %>"
-          data-email="<%= current_user.email %>"></script>
-<% end %>
-
-<% if Subscription.where(:email => current_user.email).count > 0 %>
-  <h3>You already have a subscription</h3>
-<% else %>
-
-  <h3>Gold Subscription</h3>
-  <%= form_tag subscriptions_path do %>
-    <%= hidden_field_tag :plan_id, "growthpal-retainer" %>
-    <script
-      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
-      data-name="GrowthPal"
-      data-description="Monthly Retainer"
-      data-currency="aud"
-      data-image="<%= asset_path 'stripe-icon.png' %>"
-      data-email="<%= current_user.email %>">
-    </script>
-  <% end %>
-   
-  <h3>Silver Subscription</h3>
-  <%= form_tag subscriptions_path do %>
-    <%= hidden_field_tag :plan_id, "growthpal-retainer" %>
-    <script
-      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
-      data-name="GrowthPal"
-      data-description="Another Plan"
-      data-currency="aud"
-      data-image="<%= asset_path 'stripe-icon.png' %>"
-      data-email="<%= current_user.email %>">
-    </script>
-  <% end %>
-
-<% end %>

@@ -9,6 +9,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    # Product amounts in dollars
+    @website_package = 150000
+    @stripe_setup = 50000
+
     render layout: "dashboard"
   end
   

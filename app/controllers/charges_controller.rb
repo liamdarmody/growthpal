@@ -2,12 +2,6 @@ class ChargesController < ApplicationController
 
   before_action :authenticate_user!
 
-  def new
-    # Product amounts in dollars
-    @website_package = 10000
-    @other_package = 5000
-  end
-
   def create
     # get params from form
     email = current_user.email
@@ -17,9 +11,9 @@ class ChargesController < ApplicationController
     # Set Product amount to cents
     case product
     when "website-package"
-      @amount = 10000
-    when "other-package"
-      @amount = 5000
+      @amount = 150000
+    when "stripe-setup"
+      @amount = 50000
     else
       redirect_to new_charge_path
     end
