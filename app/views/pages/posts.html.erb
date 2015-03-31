@@ -1,10 +1,9 @@
 <div id="posts">
   <div class="container">
     <div class="row">
+      
       <div class="col-md-9">
-        
         <% @posts.each do |post| %>
-
         <div class="post">
           <div class="title">
             <%= link_to "#{post.title}", post_path(post.slug) %>
@@ -14,28 +13,20 @@
             <%= time_ago_in_words(post.updated_at) %> ago
           </div>
           <%= post.content_html.html_safe %>
-          <%= link_to "Continue reading this post", post_path(post.slug), :class => "continue-reading" %>
-          <!-- <a href="blogpost.html" class="continue-reading">Continue reading this post</a> -->
+          <%= link_to "Continue reading", post_path(post.slug), :class => "continue-reading" %>
         </div>
-
         <% end %>
-
         <div class="pages">
           <ul class="pagination">
               <%= paginate @posts %>
           </ul>
         </div>
       </div>
+      
       <div class="col-md-3 sidebar">
-        <div class="search">
-          <form>
-            <span class="icomoon-search"></span>
-            <input type="text" name="q" placeholder="Search on blog..." />
-          </form>
-        </div>
         <div class="updates">
           <strong>
-            Free blog updates
+            Keep up to date
             <i class="fa fa-rss"></i>
           </strong>
           <p>
@@ -43,18 +34,14 @@
             Sign up  to receieve an email whenever we post something in the blog.
           </p>
         </div>
-        <div class="follow-tw">
-          <img src="images/twitterfollow.png" alt="follow-tw" />
-        </div>
         <div class="best-hits">
-          <strong>Check out our best hits:</strong>
-          <a href="#">How to start a business</a>
-          <a href="#">How to sell online</a>
-          <a href="#">Climate change when needed</a>
-          <a href="#">Web development upstart</a>
-          <a href="#">Learn Rails in 30 days</a>
+          <strong>Quick Navigation</strong>
+          <% @posts.each do |post| %>
+            <%= link_to "#{post.title}", post_path(post.slug) %>
+          <% end %>
         </div>
       </div>
+      
     </div>
   </div>
 </div>
