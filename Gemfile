@@ -27,17 +27,33 @@ gem 'friendly_id', '5.1.0'
 # gem 'bootstrap-sass', '3.3.3'
 
 group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '3.5.1'
+  
+  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '2.1.1'
-
-  # Figaro: https://github.com/laserlemon/figaro
-  gem 'figaro', '1.1.0'
 
   # Spring: https://github.com/rails/spring
   gem 'spring', '1.3.3'
 
+  # RSpec Rails for testing https://rubygems.org/gems/rspec-rails
+  gem 'rspec-rails'
+
+  # Making tests more human https://rubygems.org/gems/shoulda-matchers
+  gem 'shoulda-matchers'
+
+  # Simulates how a user would interact with a website https://rubygems.org/gems/capybara/versions/2.4.4
+  gem 'capybara'
+
+  # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema: https://rubygems.org/gems/annotate/versions/2.6.8
   gem 'annotate'
+
+  # Figaro: https://github.com/laserlemon/figaro
+  gem 'figaro', '1.1.0'
 end
+
+# SimpleCov for testing stats
+gem 'simplecov', :require => false, :group => :test
 
 # PostgreSQL
 gem 'pg'
