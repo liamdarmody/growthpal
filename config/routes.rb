@@ -1,16 +1,21 @@
 Growthpal::Application.routes.draw do
 
   root "pages#home"
-  get "home", to: "pages#home", as: "home"
 
+  # Pages
   get "inside", to: "pages#inside", as: "inside"
   get "/contact", to: "pages#contact", as: "contact"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
   
+  # Blogs Posts
   get "posts", to: "pages#posts", as: "posts"
   get "posts/:id", to: "pages#show_post", as: "post"
   devise_for :users
 
+  # Stripe Charges
+  resources :charges, :path => '/payments'
+
+  # Admin
   namespace :admin do
     root "base#index"
     resources :users

@@ -63,3 +63,6 @@ gem 'comfortable_mexican_sofa', '~> 1.12.0'
 
 # Intercom: https://www.intercom.io/
 gem 'intercom-rails'
+
+# Stripe: https://stripe.com/docs/checkout/guides/rails
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
