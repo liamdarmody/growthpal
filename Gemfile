@@ -39,17 +39,31 @@ group :development, :test do
   # RSpec Rails for testing https://rubygems.org/gems/rspec-rails
   gem 'rspec-rails'
 
-  # Making tests more human https://rubygems.org/gems/shoulda-matchers
-  gem 'shoulda-matchers'
+  # Factory Girl: https://github.com/thoughtbot/factory_girl_rails
+  gem 'factory_girl_rails'
 
-  # Simulates how a user would interact with a website https://rubygems.org/gems/capybara/versions/2.4.4
-  gem 'capybara'
+  # Making tests more human https://rubygems.org/gems/shoulda-matchers
+  gem 'shoulda-matchers' 
 
   # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema: https://rubygems.org/gems/annotate/versions/2.6.8
   gem 'annotate'
 
   # Figaro: https://github.com/laserlemon/figaro
   gem 'figaro', '1.1.0'
+end
+
+group :test do
+  # Faker: https://github.com/stympy/faker
+  gem 'faker'
+
+  # Simulates how a user would interact with a website https://rubygems.org/gems/capybara/versions/2.4.4
+  gem 'capybara'
+
+  # Guard Rspec: https://github.com/guard/guard-rspec
+  gem 'guard-rspec'
+
+  # Launchy: https://rubygems.org/gems/launchy/versions/2.4.3
+  gem 'launchy'
 end
 
 # SimpleCov for testing stats
