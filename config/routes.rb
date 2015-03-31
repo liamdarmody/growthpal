@@ -3,7 +3,7 @@ Growthpal::Application.routes.draw do
   root "pages#home"
 
   # Pages
-  get "inside", to: "pages#inside", as: "inside"
+  get "/dashboard", to: "pages#dashboard", as: "dashboard"
   get "/contact", to: "pages#contact", as: "contact"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
   
@@ -13,7 +13,10 @@ Growthpal::Application.routes.draw do
   devise_for :users
 
   # Stripe Charges
-  resources :charges, :path => '/payments'
+  resources :charges, :path => '/payments', :only => [:new, :create]
+
+  # Stripe Subscriptions
+  resources :subscriptions, :only => [:new, :create]
 
   # Admin
   namespace :admin do

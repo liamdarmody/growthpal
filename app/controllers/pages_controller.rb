@@ -1,15 +1,15 @@
 class PagesController < ApplicationController
 
   before_action :authenticate_user!, only: [
-    :inside
+    :dashboard
   ]
 
   def home
     render :cms_page => '/'
   end
 
-  def inside
-    render :cms_page => '/inside'
+  def dashboard
+    render layout: "dashboard"
   end
   
   def posts

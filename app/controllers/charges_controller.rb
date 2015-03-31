@@ -3,15 +3,30 @@ class ChargesController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    # Product amounts in dollars
+    @website_package = 10000
+    @other_package = 5000
   end
 
   def create
-    # Amount in cents
-    @amount = 500 # add product amount variable in cents (e.g. @product.amount * 100)
+    # get params from form
+    email = current_user.email
+    token = params[:stripeToken]
+    product = params[:product_id]
+
+    # Set Product amount to cents
+    case product
+    when "website-package"
+      @amount = 10000
+    when "other-package"
+      @amount = 5000
+    else
+      redirect_to new_charge_path
+    end
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
-      :card  => params[:stripeToken]
+      :email => email,
+      :card  => token
     )
 
     charge = Stripe::Charge.create(
@@ -23,7 +38,7 @@ class ChargesController < ApplicationController
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to charges_path
+    redirect_to new_charge_path
   end
 
 end
