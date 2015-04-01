@@ -1,8 +1,8 @@
 ---
-label: Launch
-layout: launch
+label: '404'
+layout: '404'
 parent: index
 target_page: 
 categories: []
 is_published: true
-position: 2
+position: 3
