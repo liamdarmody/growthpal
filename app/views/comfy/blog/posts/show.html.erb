@@ -1,7 +1,7 @@
 <div id="blogpost-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 post">
+      <div class="col-md-10 post">
         <div class="title">
           <h1><%= @post.title %></h1>
         </div>
@@ -9,7 +9,6 @@
           <strong><em>By <%= @post.author %></em></strong>
           <strong><em>on <%= @post.published_at.strftime("%-d %B, %Y") %></em></strong>
         </div>
-        <br>
         <div class="content">
           <%= @post.content.html_safe %>
         </div>

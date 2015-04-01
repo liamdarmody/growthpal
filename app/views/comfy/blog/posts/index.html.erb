@@ -14,7 +14,6 @@
           <br>
           <%= post.excerpt.html_safe %>
           <br>
-          <br>
           <em><%= link_to "Continue reading", comfy_blog_post_path(@cms_site.path, @blog.path, post.slug), :class => "continue-reading" %></em>
         </div>
         <% end %>
