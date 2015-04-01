@@ -48,6 +48,78 @@ Initial Setup
 
 * Drop, Migrate and Seed the Database: `rbricks -r`
 
+Add CMS Fixtures to CMS
+-------------
+
+* Create Site in Database:
+
+  * Local:
+
+    * Run `rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'localhost:3000')`
+
+    OR
+
+    * Start the server locally and visit "localhost:3000/admin/sites". When the page loads, add a site with the following details: `Main Site, main-site, localhost:3000`
+
+  * Heroku:
+
+    * Run `heroku run rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'growthpal.herokuapp.com')`
+
+    OR
+
+    * Visit "yourappname.herokuapp.com/admin/sites". When the page loads, add a site with the following details: `Main Site, main-site, localhost:3000`
+
+> If that doesn't work, start the server locally and visit localhost:3000/admin/sites. When the page loads, add a site with the following details: `Main Site, main-site, localhost:3000`
+
+* Create Blog in Database:
+
+  * Local:
+
+    * Start the server locally and visit "/admin/sites/1/blogs" & add a blog with the following details: `Main Blog, main-blog, application`
+
+  * Heroku:
+
+    * Visit "yourappname.herokuapp.com/admin/sites/1/blogs" & add a blog with the following details: `Main Blog, main-blog, application`
+
+* Load CMS Fixtures into Database:
+
+  * Local:
+
+    * Run `rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site`
+
+  * Heroku:
+
+    * Run `heroku run rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site`
+
+* Export Pages from Database into Files (optional):
+
+  * Local:
+
+    * Run `rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed`
+
+  * Heroku:
+
+    * Run `heroku run rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed`
+
+> **Tip:** Check out the [Working with CMS fixtures](https://github.com/comfy/comfortable-mexican-sofa/wiki/Working-with-CMS-fixtures) to learn about other ways to speed up initial content population.
+
+Update Page Content
+-------------
+
+* Login as Admin: 
+
+  * Local: `localhost:3000/users/sign_in`
+
+  * Heroku: `yourappname.herokuapp.com/users/sign_in`
+
+* Visit the Admin Panel:
+
+  * Local: `localhost:3000/admin`
+
+  * Heroku: `yourappname.herokuapp.com/admin`
+
+* Copy can be updated within "Snippets", "Pages" & "Blog"
+
 Configuration
 -------------
 
@@ -116,6 +188,17 @@ Configuration
 
     * Update the file with your own Disqus code
 
+Push to Github
+-------------
+
+* Create new Github repository
+
+* Remove origin remote: 'git remote rm origin'
+
+* Add your new origin remote: `git remote add origin https://github.com/username/repository-name.git`
+
+* Push to origin master: `git push -u origin master`
+
 Deployment
 -------------
 
@@ -131,42 +214,11 @@ Deployment
 
 * Setup Env on Heroku: `figaro heroku:set -e production`
 
-Add Seed Pages to CMS
+Point Heroku App to Domain
 -------------
 
-* Create Site in Database:
+* Login to your domain registrar
 
-  * Local: `rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'localhost:3000')`
+* Within the domain management for your chosen domain, add a CNAME Record with an Alias for `appname.herokuapp.com`
 
-  * Heroku: `heroku run rake Comfy::Cms::Site.create!(label: 'Main Site', identifier: 'main-site', hostname: 'growthpal.herokuapp.com')`
-
-* Load CMS Fixtures into Database:
-
-  * Local: `rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site`
-
-  * Heroku: `heroku run rake comfortable_mexican_sofa:fixtures:import FROM=main-site-seed TO=main-site`
-
-* Export Pages from Database into Files (optional):
-
-  * Local: `rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed`
-
-  * Heroku: `heroku run rake comfortable_mexican_sofa:fixtures:export FROM=main-site TO=main-site-seed`
-
-> **Tip:** Check out the [Working with CMS fixtures](https://github.com/comfy/comfortable-mexican-sofa/wiki/Working-with-CMS-fixtures) to learn about other ways to speed up initial content population. 
-
-Update Page Content
--------------
-
-* Login as Admin: 
-
-  * Local: `localhost:3000/users/sign_in`
-
-  * Heroku: `yourappname.herokuapp.com/users/sign_in`
-
-* Visit the CMS:
-
-  * Local: `localhost:3000/cms`
-
-  * Heroku: `yourappname.herokuapp.com/cms`
-
-* Go to "Pages" tab and update copy in the editor
+* You may also need to remove default Name Servers
