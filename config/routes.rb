@@ -7,9 +7,7 @@ Growthpal::Application.routes.draw do
   get "/contact", to: "pages#contact", as: "contact"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
   
-  # Blogs Posts
-  get "posts", to: "pages#posts", as: "posts"
-  get "posts/:id", to: "pages#show_post", as: "post"
+  # Devise
   devise_for :users
 
   # Stripe Charges
@@ -18,14 +16,15 @@ Growthpal::Application.routes.draw do
   # Stripe Subscriptions
   resources :subscriptions, :only => [:new, :create]
 
-  # Admin
+  # User Admin
   namespace :admin do
     root "base#index"
     resources :users
-    get "posts/drafts", to: "posts#drafts", as: "posts_drafts"
-    get "posts/dashboard", to: "posts#dashboard", as: "posts_dashboard"
-    resources :posts
   end
+
+  # Define routes for comfy blog
+  comfy_route :blog_admin, :path => '/admin'
+  comfy_route :blog, :path => '/blog'
 
   # Define route for cms_admin
   comfy_route :cms_admin, :path => '/admin'

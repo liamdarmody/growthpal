@@ -1,15 +1,17 @@
 <div id="blogpost-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 post">
+      <div class="col-md-12 post">
         <div class="title">
-          <%= @post.title %>
+          <h1><%= @post.title %></h1>
         </div>
         <div class="author">
-          <%= @post.updated_at.strftime("%Y, %B %-d") %>
+          <strong><em>By <%= @post.author %></em></strong>
+          <strong><em>on <%= @post.published_at.strftime("%-d %B, %Y") %></em></strong>
         </div>
+        <br>
         <div class="content">
-          <%= @post.content_html.html_safe %>
+          <%= @post.content.html_safe %>
         </div>
         <div class="comments">
           <%= render 'layouts/disqus_script' %>

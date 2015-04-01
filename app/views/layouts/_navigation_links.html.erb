@@ -1,4 +1,4 @@
-<li><%= link_to "Posts", posts_path %></li>
+<li><%= link_to "Blog", comfy_blog_posts_path %></li>
 <li><%= link_to "Contact", contact_path %></li>
 <% if !user_signed_in? %>
 <li><%= link_to "Sign in", new_user_session_path %></li>
@@ -17,9 +17,3 @@
   <li><%= link_to "Sign out", destroy_user_session_path, data:{method: :delete}, :class => "button" %></li>
 </ul>
 <% end %>
-
-<!-- <ul class="nav navbar-nav navbar-right visible-md visible-lg">
-              <li>
-                  <a href="signup.html" class="button">Sign up free</a>
-              </li>
-            </ul> -->

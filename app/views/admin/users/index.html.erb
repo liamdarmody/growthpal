@@ -1,19 +1,26 @@
 <% title("Users Admin") %>
-<h1>Users <small>Admin</small></h1>
-<p><%= link_to "Back to Admin", admin_root_path %></p>
 
-<div class="text-center">
-  <p><%= page_entries_info @users %></p>
-  <%= paginate @users %>
+<div class='page-header'>
+  <h1>Users <small>Admin</small></h1>
 </div>
 
-<%= form_tag admin_users_path, method: 'get', html: {role: "form"} do %>
-<p>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
-  <%= link_to "All", admin_users_path, {class: "btn btn-sm btn-link"} %>
-</p>
-<% end %>
+<div class="row">
+  <div class="col-sm-6">
+      <p><%= page_entries_info @users %></p>
+      <%= paginate @users %>
+  </div>
+  <div class="col-sm-6">
+    <div class="text-right">
+      <%= form_tag admin_users_path, method: 'get', html: {role: "form"} do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
+        <%= link_to "All", admin_users_path, {class: "btn btn-sm btn-link"} %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <table class="table table-striped">
   <tr>

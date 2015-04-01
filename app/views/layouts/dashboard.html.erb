@@ -15,6 +15,12 @@
 
   <%= render 'layouts/navigation_menu_top' %>
 
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-9 text-left message-box">
+      <%= render 'layouts/messages' %>
+    </div>
+  </div>
+
   <%= yield %>
 
   <%= render 'layouts/footer' %>

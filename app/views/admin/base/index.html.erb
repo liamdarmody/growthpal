@@ -1,15 +1,12 @@
 <% title("Admin") %>
-<h1>Admin <small>Home</small></h1>
-<div class="row">
-  <div class="col-sm-4">
-    <h3>Menu</h3>
-    <h4><%= link_to "Users", admin_users_path %> <small>- <%= "#{pluralize(@count, 'user')}" %></small></h4>
-    <h4><%= link_to "Posts", admin_posts_dashboard_path %> <small>- <%= "#{pluralize(@post_count, 'post')}" %></small></h4>
-    <h4><%= link_to "CMS", comfy_admin_cms_path %> <small>- Static Pages</small></h4>
-    <hr/>
-  </div>
 
-  <div class="col-sm-4">
+<div class='page-header'>
+  <h1>Admin <small>Home</small></h1>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6">
     <h3>Last Sign Ups</h3>
     <ul class="list-unstyled">
       <% @last_signups.each do |user| %>
@@ -21,7 +18,7 @@
     </ul>
   </div>
 
-  <div class="col-sm-4">
+  <div class="col-sm-6">
     <h3>Last Sign Ins</h3>
     <ul class="list-unstyled">
       <% @last_signins.each do |user| %>

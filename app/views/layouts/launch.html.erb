@@ -10,7 +10,14 @@
   <%= csrf_meta_tags %>
   <%= render 'layouts/vwo_code' %>
 </head>
-<body id="coming-soon" class="">
+<body id="coming-soon">
+
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-9 text-left message-box">
+      <%= render 'layouts/messages' %>
+    </div>
+  </div>
+
   <%= yield %>
     
   <script type="text/javascript">

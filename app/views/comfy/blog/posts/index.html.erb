@@ -6,19 +6,19 @@
         <% @posts.each do |post| %>
         <div class="post">
           <div class="title">
-            <%= link_to "#{post.title}", post_path(post.slug) %>
+            <h1><%= link_to post.title, comfy_blog_post_path(@cms_site.path, @blog.path, post.slug) %></h1>
           </div>
           <div class="author">
-            <%#= @post.updated_at.strftime("%Y, %B %-d") %>
-            <%= time_ago_in_words(post.updated_at) %> ago
+            <strong><em>Published <%= time_ago_in_words(post.updated_at) %> ago</em></strong>
           </div>
-          <%= post.content_html.html_safe %>
-          <%= link_to "Continue reading", post_path(post.slug), :class => "continue-reading" %>
+          <br>
+          <%= post.content.html_safe %>
+          <em><%= link_to "Continue reading", comfy_blog_post_path(@cms_site.path, @blog.path, post.slug), :class => "continue-reading" %></em>
         </div>
         <% end %>
         <div class="pages">
           <ul class="pagination">
-              <%= paginate @posts %>
+              <%= comfy_paginate @posts %>
           </ul>
         </div>
       </div>
@@ -37,7 +37,7 @@
         <div class="best-hits">
           <strong>Quick Navigation</strong>
           <% @posts.each do |post| %>
-            <%= link_to "#{post.title}", post_path(post.slug) %>
+            <%= link_to post.title, comfy_blog_post_path(@cms_site.path, @blog.path, post.slug) %>
           <% end %>
         </div>
       </div>

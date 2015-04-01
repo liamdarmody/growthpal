@@ -91,6 +91,9 @@ end
 # ComfortableMexicanSofa: https://github.com/comfy/comfortable-mexican-sofa
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
 
+# ComfyBlog (Blog Engine for ComfortableMexicanSofa): https://github.com/comfy/comfy-blog
+gem 'comfy_blog', '~> 1.12.0'
+
 # Intercom: https://www.intercom.io/
 gem 'intercom-rails'
 
