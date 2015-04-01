@@ -28,15 +28,14 @@ System Requirements
 
 * Rails 4.2.0
 
->Using RailsBricks (Version: 3.1.6)
->Using ComfortableMexicanSofa
+> Using RailsBricks (Version: 3.1.6) & ComfortableMexicanSofa
 
 Initial Setup
 -------------
 
 * Clone the repo: `git clone https://github.com/liamdarmody/growthpal.git`
 
-* Update config files:
+* Add/Update config files:
 
   * config/application.yml
 
@@ -68,8 +67,6 @@ Add CMS Fixtures to CMS
     OR
 
     * Visit "yourappname.herokuapp.com/admin/sites". When the page loads, add a site with the following details: `Main Site, main-site, localhost:3000`
-
-> If that doesn't work, start the server locally and visit localhost:3000/admin/sites. When the page loads, add a site with the following details: `Main Site, main-site, localhost:3000`
 
 * Create Blog in Database:
 
@@ -202,9 +199,9 @@ Push to Github
 Deployment
 -------------
 
-* Setup Heroku Repo: `heroku create appname`
+* Create Heroku Repository: `heroku create appname`
 
-* Push to Heroku Repo: `git push heroku master`
+* Push to Heroku Repository: `git push heroku master`
 
 * Migrate Database: `heroku run rake db:migrate`
 
@@ -219,6 +216,6 @@ Point Heroku App to Domain
 
 * Login to your domain registrar
 
-* Within the domain management for your chosen domain, add a CNAME Record with an Alias for `appname.herokuapp.com`
+* Within the domain management for your chosen domain, add a CNAME Record with an Alias for `yourappname.herokuapp.com`
 
 * You may also need to remove default Name Servers
