@@ -42,6 +42,8 @@ Initial Setup
 
   * config/database.yml
 
+* Temporarily set your PG Path: `export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin`
+
 * Run `bundle`
 
 * Drop, Migrate and Seed the Database: `rbricks -r`
