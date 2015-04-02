@@ -219,3 +219,8 @@ Point Heroku App to Domain
 * Within the domain management for your chosen domain, add a CNAME Record with an Alias for `yourappname.herokuapp.com`
 
 * You may also need to remove default Name Servers
+
+Thanks
+-------------
+A big thank you to [Joel](https://github.com/wofockham/) and [Jack](https://github.com/anonymous-wolf) for all their assistance and debugging throughout the project.
+
